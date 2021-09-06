@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ArchitectureExampleWithRoom">
         <activity
-            android:name=".AddNoteActivity"
+            android:name=".AddEditNoteActivity"
             android:exported="true"
             android:parentActivityName=".MainActivity"/>
         <activity

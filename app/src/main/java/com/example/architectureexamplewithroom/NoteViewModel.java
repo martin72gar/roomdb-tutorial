@@ -30,7 +30,7 @@ public class NoteViewModel extends AndroidViewModel {
         repository.delete(note);
     }
 
-    public void allNotes() {
+    public void deleteAllNotes() {
         repository.deleteAllNotes();
     }
 
