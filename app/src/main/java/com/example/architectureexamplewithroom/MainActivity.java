@@ -25,9 +25,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    public static final int ADD_NOTE_REQUEST = 1;
-    public static final int EDIT_NOTE_REQUEST = 2;
-
     private NoteViewModel noteViewModel;
 
     @Override
@@ -48,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         noteViewModel.getAllNotes().observe(this, new Observer<List<Note>>() {
             @Override
             public void onChanged(List<Note> notes) {
-                noteAdapter.setNotes(notes);
+                noteAdapter.submitList(notes);
             }
         });
 
@@ -65,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Note deleted", Toast.LENGTH_SHORT).show();
             }
         }).attachToRecyclerView(recyclerView);
-
 
 
         ActivityResultLauncher<Intent> addNoteActivityResultLauncher = registerForActivityResult(
